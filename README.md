@@ -8,14 +8,10 @@ https://zhuanlan.zhihu.com/p/531619117
 画图
 PlotNeuralNet
 
-https://github.com/HarisIqbal88/PlotNeuralNet
 
 
 推荐好用的深度学习框架绘制工具（含教程）
 
-​
-目录
-收起
 
 3.PlotNeuralNet
 4.PPT
@@ -23,6 +19,7 @@ https://github.com/HarisIqbal88/PlotNeuralNet
 
 3.PlotNeuralNet
 亮点：脚本化，使用LaTex编写或者使用Python脚本编写结构模型，自由度高(直接网络结构代码生成可视化图，真香)。很多论文的插图就是使用这个工具可视化的。
+https://github.com/HarisIqbal88/PlotNeuralNet
 
 代码2-unet.py
 
