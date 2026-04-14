@@ -1,86 +1,470 @@
 # woshanzhi.github.io
-word 插入图片，插入emf 图片可以保证放大仍是清晰
 
-latex 则是插入eps 放大仍清晰，需要用专门的软件打开
+目前先记录我在写论文、做汇报、整理科研材料时，关于**论文图片格式与深度学习结构图绘制**的经验总结。后续博客也会围绕以下内容持续更新：
+
+- 论文写作经验
+- 深度学习实验记录
+- 论文配图与科研可视化
+- 工具使用笔记
+- 个人学习总结
+
+---
+
+## 一、论文中图片格式怎么选
+
+在论文写作、项目汇报、课题答辩中，图片是否清晰非常重要。尤其是在以下场景中：
+
+- 放大查看细节时
+- 导出 PDF 之后再次缩放时
+- 打印论文或提交给期刊时
+- 在 Word、LaTeX、PPT 之间来回切换时
+
+很多同学一开始习惯直接截图，或者插入 jpg / png 图片，但这类图片本质上是**位图**，如果分辨率不够，放大后就容易发虚、锯齿明显。
+
+如果想让图在放大后依然保持清晰，核心思路是：
+
+> **优先使用矢量图格式，而不是低分辨率位图。**
+
+---
+
+## 二、Word 中推荐使用的图片格式：EMF
+
+如果你主要使用 **Word** 写论文或做材料整理，我比较推荐插入 **EMF** 格式图片。
+
+### 为什么推荐 EMF
+
+EMF（Enhanced Metafile）是一种矢量图格式，优点很明显：
+
+- 放大后仍然清晰
+- 线条、文字边缘更干净
+- 比普通截图更适合论文插图
+- 对流程图、网络结构图、示意图尤其友好
+
+### 适合插入 EMF 的内容
+
+- 流程图
+- 模型结构图
+- 算法框架图
+- 系统结构图
+- 统计示意图
+
+### 我的经验
+
+如果图是要放在 Word 里，尽量不要直接粘贴低清截图。能导出 EMF 的工具，优先导出 EMF；如果源工具不能直接导出，也可以考虑先导出为 PDF / SVG，再转成适合 Word 的矢量格式。
+
+---
+
+## 三、LaTeX 中推荐使用的图片格式：EPS / PDF
+
+如果你主要使用 **LaTeX** 写论文，那么更推荐使用 **EPS** 或者 **PDF** 这类适合排版系统的格式。
+
+我之前的经验是：
+
+- 插入 **EPS** 图片后，放大依然清晰
+- 比普通 png / jpg 更适合正式论文排版
+- 特别适合曲线图、函数图、结构示意图等内容
+
+### 为什么 LaTeX 更适合矢量图
+
+LaTeX 在学术排版中对矢量图支持很好，因此：
+
+- 缩放时不会明显失真
+- 字体、线条更统一
+- 最终生成 PDF 的观感更专业
+
+### 一个提醒
+
+EPS 文件通常需要用专门的软件打开或转换，不像 png / jpg 那样可以直接预览。因此如果你只是临时查看，可能会觉得不方便；但从论文最终排版效果来看，它依然很值得使用。
+
+如果你的 LaTeX 工作流较新，也可以优先考虑：
+
+- `PDF`
+- `EPS`
+- `SVG`（通常需要转换）
+
+具体选哪一种，要看你的编译方式和模板要求。
+
+---
+
+## 四、位图和矢量图的区别
+
+### 1. 位图
+
+常见格式：
+
+- jpg
+- jpeg
+- png
+- bmp
+
+特点：
+
+- 由像素组成
+- 放大后容易模糊
+- 适合照片、自然图像
+- 不太适合论文中的结构示意图
+
+### 2. 矢量图
+
+常见格式：
+
+- emf
+- eps
+- svg
+- pdf
+
+特点：
+
+- 由线条、路径、数学描述构成
+- 放大后通常依然清晰
+- 适合框架图、流程图、结构图、函数图
+- 更适合学术论文和演示文稿
+
+### 简单结论
+
+如果是：
+
+- **真实图片、实验拍摄图、显微图像、数据集样本图** → 通常用 png / jpg
+- **网络结构图、流程图、算法框架图、示意图** → 尽量用 emf / eps / pdf / svg
+
+---
+
+## 五、深度学习论文配图工具推荐
+
+下面整理几个我觉得比较常用的工具，按不同需求做一个简单总结。
+
+参考文章：
+
+- https://zhuanlan.zhihu.com/p/531619117
+
+---
+
+## 六、PlotNeuralNet：适合画深度学习网络结构图
+
+### 工具地址
+
+- https://github.com/HarisIqbal88/PlotNeuralNet
+
+### 这个工具的亮点
+
+`PlotNeuralNet` 是一个比较经典的深度学习结构图绘制工具，特别适合做论文中的网络结构可视化。
+
+它的优点是：
+
+- 可以脚本化生成网络结构图
+- 更适合科研中反复修改模型结构的场景
+- 图的风格比较统一，适合论文排版
+- 自由度高，适合 U-Net、编码器-解码器、多分支网络等结构
+
+### 适合什么人
+
+它更适合：
+
+- 已经有一定 Python / LaTeX 基础的人
+- 对论文插图规范性有要求的人
+- 需要反复调整模型结构图的人
+
+如果你只是偶尔画一下图，可能会觉得学习成本略高；但如果你经常写深度学习论文，它会非常省时间。
+
+---
+
+## 七、PlotNeuralNet 示例代码
+
+下面是一个 `2-unet.py` 示例，可以用来生成 U-Net 网络结构图：
+
+```python
+import sys
+sys.path.append('../')
+from pycore.tikzeng import *
+from pycore.blocks import *
+
+arch = [
+    # 开头
+    to_head('..'),
+    to_cor(),
+    to_begin(),
+
+    # 添加输入层
+    to_input('../examples/fcn8s/cats.jpg'),
+
+    # 编码器部分
+    to_ConvConvRelu(
+        name='ccr_b1', s_filer=500, n_filer=(64, 64),
+        offset="(0,0,0)", to="(0,0,0)", width=(2, 2), height=40, depth=40
+    ),
+    to_Pool(
+        name="pool_b1", offset="(0,0,0)", to="(ccr_b1-east)",
+        width=1, height=32, depth=32, opacity=0.5
+    ),
+
+    *block_2ConvPool(
+        name='b2', botton='pool_b1', top='pool_b2',
+        s_filer=256, n_filer=128, offset="(1,0,0)", size=(32, 32, 3.5), opacity=0.5
+    ),
+    *block_2ConvPool(
+        name='b3', botton='pool_b2', top='pool_b3',
+        s_filer=128, n_filer=256, offset="(1,0,0)", size=(25, 25, 4.5), opacity=0.5
+    ),
+    *block_2ConvPool(
+        name='b4', botton='pool_b3', top='pool_b4',
+        s_filer=64, n_filer=512, offset="(1,0,0)", size=(16, 16, 5.5), opacity=0.5
+    ),
+
+    # 瓶颈层
+    to_ConvConvRelu(
+        name='ccr_b5', s_filer=32, n_filer=(1024, 1024),
+        offset="(2,0,0)", to="(pool_b4-east)", width=(8, 8), height=8, depth=8,
+        caption="Bottleneck"
+    ),
+    to_connection("pool_b4", "ccr_b5"),
+
+    # 解码器部分
+    *block_Unconv(
+        name="b6", botton="ccr_b5", top='end_b6',
+        s_filer=64, n_filer=512, offset="(2.1,0,0)", size=(16, 16, 5.0), opacity=0.5
+    ),
+    to_skip(of='ccr_b4', to='ccr_res_b6', pos=1.25),
+
+    *block_Unconv(
+        name="b7", botton="end_b6", top='end_b7',
+        s_filer=128, n_filer=256, offset="(2.1,0,0)", size=(25, 25, 4.5), opacity=0.5
+    ),
+    to_skip(of='ccr_b3', to='ccr_res_b7', pos=1.25),
+
+    *block_Unconv(
+        name="b8", botton="end_b7", top='end_b8',
+        s_filer=256, n_filer=128, offset="(2.1,0,0)", size=(32, 32, 3.5), opacity=0.5
+    ),
+    to_skip(of='ccr_b2', to='ccr_res_b8', pos=1.25),
+
+    *block_Unconv(
+        name="b9", botton="end_b8", top='end_b9',
+        s_filer=512, n_filer=64, offset="(2.1,0,0)", size=(40, 40, 2.5), opacity=0.5
+    ),
+    to_skip(of='ccr_b1', to='ccr_res_b9', pos=1.25),
+
+    to_ConvSoftMax(
+        name="soft1", s_filer=512, offset="(0.75,0,0)",
+        to="(end_b9-east)", width=1, height=40, depth=40, caption="SOFT"
+    ),
+    to_connection("end_b9", "soft1"),
+
+    # 结束
+    to_end()
+]
 
 
-https://zhuanlan.zhihu.com/p/531619117
-画图
-PlotNeuralNet
+def main():
+    namefile = str(sys.argv[0]).split('.')[0]
+    to_generate(arch, namefile + '.tex')
 
 
+if __name__ == '__main__':
+    main()
+```
 
-推荐好用的深度学习框架绘制工具（含教程）
+### 如何运行
 
+```bash
+python 2-unet.py
+```
 
-3.PlotNeuralNet
-4.PPT
-5.Visio
+运行后会生成对应的 `tex` 文件，再按工具提供的流程编译，就可以得到网络结构图。
 
-3.PlotNeuralNet
-亮点：脚本化，使用LaTex编写或者使用Python脚本编写结构模型，自由度高(直接网络结构代码生成可视化图，真香)。很多论文的插图就是使用这个工具可视化的。
-https://github.com/HarisIqbal88/PlotNeuralNet
+### 我的建议
 
-代码2-unet.py
+如果你准备长期做深度学习相关研究，建议把常见模块（卷积块、池化块、跳连、注意力模块等）整理成自己的模板。这样以后画新网络时，只需要改结构参数，不用每次从头写。
 
-  import sys
-  sys.path.append('../')
-  from pycore.tikzeng import *
-  from pycore.blocks  import *
-  
-  arch = [ 
-      # 开头
-      to_head('..'), 
-      to_cor(),
-      to_begin(),
-      
-      #　添加输入层
-      to_input( '../examples/fcn8s/cats.jpg' ),
-  
-      #  添加block1包含一个二重卷积接relu
-      to_ConvConvRelu( name='ccr_b1', s_filer=500, n_filer=(64,64), offset="(0,0,0)", to="(0,0,0)", width=(2,2), height=40, depth=40  ),
-      to_Pool(name="pool_b1", offset="(0,0,0)", to="(ccr_b1-east)", width=1, height=32, depth=32, opacity=0.5),
-      #  添加三个block，每个包含三个二卷积加一池化
-      *block_2ConvPool( name='b2', botton='pool_b1', top='pool_b2', s_filer=256, n_filer=128, offset="(1,0,0)", size=(32,32,3.5), opacity=0.5 ),
-      *block_2ConvPool( name='b3', botton='pool_b2', top='pool_b3', s_filer=128, n_filer=256, offset="(1,0,0)", size=(25,25,4.5), opacity=0.5 ),
-      *block_2ConvPool( name='b4', botton='pool_b3', top='pool_b4', s_filer=64,  n_filer=512, offset="(1,0,0)", size=(16,16,5.5), opacity=0.5 ),
-  
-      #  瓶颈，为block5
-      to_ConvConvRelu( name='ccr_b5', s_filer=32, n_filer=(1024,1024), offset="(2,0,0)", to="(pool_b4-east)", width=(8,8), height=8, depth=8, caption="Bottleneck"  ),
-      to_connection( "pool_b4", "ccr_b5"),
-  
-      #　解码器
-      #  多个block，每个为unconv
-      *block_Unconv( name="b6", botton="ccr_b5", top='end_b6', s_filer=64,  n_filer=512, offset="(2.1,0,0)", size=(16,16,5.0), opacity=0.5 ),
-      to_skip( of='ccr_b4', to='ccr_res_b6', pos=1.25),
-      *block_Unconv( name="b7", botton="end_b6", top='end_b7', s_filer=128, n_filer=256, offset="(2.1,0,0)", size=(25,25,4.5), opacity=0.5 ),
-      to_skip( of='ccr_b3', to='ccr_res_b7', pos=1.25),    
-      *block_Unconv( name="b8", botton="end_b7", top='end_b8', s_filer=256, n_filer=128, offset="(2.1,0,0)", size=(32,32,3.5), opacity=0.5 ),
-      to_skip( of='ccr_b2', to='ccr_res_b8', pos=1.25),    
-      
-      *block_Unconv( name="b9", botton="end_b8", top='end_b9', s_filer=512, n_filer=64,  offset="(2.1,0,0)", size=(40,40,2.5), opacity=0.5 ),
-      to_skip( of='ccr_b1', to='ccr_res_b9', pos=1.25),
-      
-      to_ConvSoftMax( name="soft1", s_filer=512, offset="(0.75,0,0)", to="(end_b9-east)", width=1, height=40, depth=40, caption="SOFT" ),
-      to_connection( "end_b9", "soft1"),
-      #  结束
-      to_end() 
-      ]
-  
-  def main():
-      namefile = str(sys.argv[0]).split('.')[0]
-      to_generate(arch, namefile + '.tex' )
-  if __name__ == '__main__':
-      main()
-      
-运行：python 2-unet.py 即可生成：
+---
 
+## 八、PPT：最快上手的出图方式
 
-u-net网络结构
-使用教程：使用PlotNeuralNet绘制深度学习网络图
+### 亮点
 
-4.PPT
-亮点：上手快，便于操作
+- 上手快
+- 便于拖拽调整
+- 适合短时间内出图
+- 很适合答辩、组会、课程汇报
 
-5.Visio
-亮点：Visio更适合新手上手，绘制复杂项目的流程图和线框，因为更赞的模板；更丰富的共享组件、布局；更便利的多人协作（利用library）
+### 适合场景
+
+- 做汇报图
+- 做简化版模型结构图
+- 做流程说明图
+- 临时修改配色和排版
+
+### 我的建议
+
+如果你现在最重要的是“快速画出来”，那就先用 PPT。尤其是在论文初稿阶段，不一定要一开始就追求最规范，先把逻辑表达清楚更重要。
+
+但如果最后要正式投稿，建议尽量导出为高质量格式，避免直接截图粘贴。
+
+---
+
+## 九、Visio：适合流程图和系统框架图
+
+### 亮点
+
+- 对新手相对友好
+- 更适合复杂流程图和系统图
+- 模板丰富
+- 布局和组件比较完善
+- 对多人协作更方便
+
+### 适合场景
+
+- 系统架构图
+- 流程图
+- 项目逻辑图
+- 模块关系图
+- 工程类论文中的框架图
+
+如果你的图更偏“系统设计”“工程流程”“模块逻辑”，Visio 往往比纯手动画图更省力。
+
+---
+
+## 十、我自己的使用建议
+
+结合我自己的使用经验，如果要做论文配图，我会这样选：
+
+### 场景 1：Word 写论文
+
+优先考虑：
+
+- `EMF`
+- 其他可转为矢量的格式
+
+目标：放大不糊、排版稳定。
+
+### 场景 2：LaTeX 写论文
+
+优先考虑：
+
+- `EPS`
+- `PDF`
+
+目标：编译稳定、打印清晰、和正文风格一致。
+
+### 场景 3：深度学习网络结构图
+
+优先考虑：
+
+- `PlotNeuralNet`
+- 或者用 `PPT` 快速起稿，再后期精修
+
+### 场景 4：流程图 / 系统图
+
+优先考虑：
+
+- `Visio`
+- `PPT`
+
+---
+
+## 十一、避免踩坑的小建议
+
+### 1. 不要直接用低清截图当论文主图
+
+截图看起来方便，但很容易出现：
+
+- 放大模糊
+- 文字发虚
+- 线条锯齿明显
+- 投稿后 PDF 观感差
+
+### 2. 图中文字尽量统一
+
+同一篇论文里，尽量统一：
+
+- 字体
+- 字号
+- 线条粗细
+- 配色风格
+- 箭头样式
+
+这样整体观感会更专业。
+
+### 3. 提前考虑最终使用场景
+
+画图之前先想清楚：
+
+- 是插入 Word？
+- 还是插入 LaTeX？
+- 是答辩 PPT 用？
+- 还是期刊投稿用？
+
+不同场景下，输出格式和细节要求并不一样。
+
+### 4. 保留源文件
+
+无论用什么工具，最好都保留源文件：
+
+- PPT 源文件
+- Visio 源文件
+- PlotNeuralNet 脚本
+- SVG / PDF 原图
+
+这样后面修改论文时，就不用重新画。
+
+---
+
+## 十二、后续博客准备怎么写
+
+这个仓库后面会继续扩展成我的个人博客，准备更新以下内容：
+
+- 论文写作经验
+- 图片与排版经验
+- 深度学习结构图绘制
+- 代码踩坑记录
+- 研究生日常学习总结
+
+如果你也在做 GitHub Pages 博客，可以先从最简单的方式开始：
+
+### 方式 1：先把 README 当作首页内容整理
+
+适合刚开始，不需要额外框架。
+
+你可以持续往仓库里补充：
+
+- 自我介绍
+- 研究方向
+- 学习笔记目录
+- 博客文章链接
+- 常用资源导航
+
+### 方式 2：后续再接入静态博客框架
+
+如果后面你想做成真正的个人博客，比较推荐：
+
+- `Jekyll`：GitHub Pages 原生支持，最省心
+- `Hexo`：中文社区资料多，上手快
+- `Hugo`：生成速度快，适合内容多时使用
+
+如果你是第一次搭建，我更建议优先考虑 **Jekyll**，因为和 GitHub Pages 配合最直接。
+
+---
+
+## 十三、后续准备写哪些博客文章
+
+如果你后面开始写个人博客，建议不要一上来就追求“大而全”，可以先从你已经有积累的内容开始。比如：
+
+1. `Word 和 LaTeX 中如何保证论文图片清晰`
+2. `PlotNeuralNet 使用笔记：从安装到画出第一张网络结构图`
+3. `论文配图工具对比：PPT、Visio、PlotNeuralNet 怎么选`
+4. `科研论文插图常见踩坑记录`
+5. `我自己的论文作图工作流总结`
+
+这样写有两个好处：
+
+- 你已经有真实经验，写起来更顺
+- 内容很实用，更容易帮助到别人
+
+---
+
+## 十四、一句话总结
+
+如果只记住最核心的一点，那就是：
+
+> **论文中的结构图、流程图、网络图，尽量优先使用矢量格式；写博客时，优先记录自己真正踩过的坑和解决过程。**
+
+后续我会继续把这个仓库逐步整理成一个更完整的个人博客。
