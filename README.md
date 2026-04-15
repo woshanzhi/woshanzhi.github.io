@@ -94,13 +94,46 @@ http://127.0.0.1:4000
 
 ## 发布到 GitHub Pages
 
-你这个仓库名本身就是 `woshanzhi.github.io`，所以只要把内容推送到 GitHub，通常就能直接作为个人站点发布。
+这个仓库现在使用 **GitHub Actions** 部署博客，而不是直接把仓库内容当作普通静态文件展示。
 
-如果 GitHub Pages 没自动生效，可以去仓库设置里检查：
+### 第一步：推送代码到默认分支
+
+把当前修改推送到 GitHub 的默认分支（通常是 `main`）。
+
+### 第二步：到 GitHub 打开 Pages 设置
+
+进入：
 
 - `Settings`
 - `Pages`
-- 部署分支是否为默认分支
+
+然后把 `Build and deployment` 的 `Source` 设置为：
+
+- `GitHub Actions`
+
+### 第三步：等待工作流自动部署
+
+以后每次你推送新文章或修改配置时，GitHub 都会自动重新构建博客。
+
+你可以在这里查看部署状态：
+
+- `Actions`
+- `Deploy Jekyll site to Pages`
+
+如果部署成功，访问：
+
+- `https://woshanzhi.github.io`
+
+就会看到真正的博客网页，而不是仓库 README 页面。
+
+### 如果网站还是旧内容
+
+可以按这个顺序检查：
+
+1. `Actions` 里最新工作流是否成功
+2. `Settings -> Pages` 的来源是否已切到 `GitHub Actions`
+3. 浏览器是否缓存了旧页面，尝试强制刷新
+4. 等待 1~5 分钟让 GitHub Pages 完成更新
 
 ---
 
