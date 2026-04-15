@@ -2,7 +2,6 @@ title: 日暮秋烟起的博客
 description: 计算机视觉｜RISC-V｜嵌入式开发
 author: Shan Zhi
 
-# 极简主题 绝对不报错 立刻显示新版
 theme: minima
 
 lang: zh-CN
@@ -12,6 +11,8 @@ url: "https://woshanzhi.github.io"
 baseurl: ""
 
 paginate: 10
+paginate_path: "/page:num/"
+
 plugins:
   - jekyll-feed
   - jekyll-paginate
@@ -21,5 +22,8 @@ defaults:
   - scope:
       path: ""
     values:
-      layout: "post"
-      author: "Shan Zhi"
+      layout: post
+      author: Shan Zhi
+
+header_pages:
+  - _tabs/about.md

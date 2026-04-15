@@ -1,16 +1,12 @@
 source "https://rubygems.org"
 
+ruby ">= 3.1"
+
 gem "jekyll", "~> 4.4"
-gem "jekyll-remote-theme"
-gem "jekyll-feed"
-gem "jekyll-sitemap"
-gem "jekyll-paginate-v2"
-gem "jekyll-seo-tag"
-gem "jekyll-avatar"
-gem "jekyll-gist"
-gem "jekyll-github-metadata"
-gem "jemoji"
-gem "jekyll-include-cache"
+gem "minima", "~> 2.5"
+gem "jekyll-feed", "~> 0.17"
+gem "jekyll-paginate", "~> 1.1"
+gem "jekyll-seo-tag", "~> 2.8"
 gem "webrick", "~> 1.8"
 
 group :windows do
