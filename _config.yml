@@ -1,93 +1,25 @@
 title: 日暮秋烟下的博客
-tagline: 计算机视觉｜RISC-V｜嵌入式开发
-description: >-
-  记录科研写作、深度学习实验、论文配图与技术学习过程的个人博客。
+description: 计算机视觉｜RISC-V｜嵌入式开发
+author: Shan Zhi
 
-url: "https://woshanzhi.github.io"
-baseurl: ""
+# 极简主题 绝对不报错 立刻显示新版
+theme: minima
 
 lang: zh-CN
 timezone: Asia/Shanghai
 
-remote_theme: cotes2020/jekyll-theme-chirpy
+url: "https://woshanzhi.github.io"
+baseurl: ""
 
-github:
-  username: woshanzhi
-
-social:
-  name: Shan Zhi
-  links:
-    - https://github.com/woshanzhi
-
-theme_mode: light
-
-pagination:
-  enabled: true
-  per_page: 8
-  sort_field: date
-  sort_reverse: true
-
-paginate: 8
-
-toc: true
-
-comments:
-  provider:
-
-avatar:
-
+paginate: 10
 plugins:
-  - jekyll-remote-theme
   - jekyll-feed
-  - jekyll-sitemap
-  - jekyll-paginate-v2
+  - jekyll-paginate
   - jekyll-seo-tag
-  - jekyll-avatar
-  - jekyll-gist
-  - jekyll-github-metadata
-  - jemoji
-  - jekyll-include-cache
-
-collections:
-  tabs:
-    output: true
-    sort_by: order
 
 defaults:
   - scope:
       path: ""
-      type: posts
     values:
-      layout: post
-      author: Shan Zhi
-      permalink: /posts/:title/
-      comments: false
-      toc: true
-  - scope:
-      path: ""
-      type: tabs
-    values:
-      layout: page
-      permalink: /:title/
-
-kramdown:
-  footnote_backlink: "&#8617;&#xfe0e;"
-  syntax_highlighter: rouge
-  syntax_highlighter_opts:
-    css_class: highlight
-    span:
-      line_numbers: false
-    block:
-      line_numbers: true
-      start_line: 1
-
-sass:
-  style: compressed
-
-exclude:
-  - README.md
-  - LICENSE
-  - Gemfile.lock
-  - node_modules
-  - vendor
-  - jekyll-theme-chirpy-master
+      layout: "post"
+      author: "Shan Zhi"
