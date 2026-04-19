@@ -25,5 +25,6 @@ defaults:
       layout: post
       author: Shan Zhi
 
-header_pages:
-  - _tabs/about.md
+# 如果不需要顶部导航可以注释掉
+# header_pages:
+#   - _tabs/about.md
