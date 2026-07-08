@@ -17,6 +17,10 @@ footer-text: Copyright (c) 2026 Pianfan
 
 url: https://woshanzhi.github.io
 
+
+avatar: https://woshanzhi.github.io/images/avatar.png
+
+
 permalink: /:title/
 paginate_path: /page:num/
 
