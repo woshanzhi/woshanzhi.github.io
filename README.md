@@ -1,6 +1,6 @@
 # woshanzhi.github.io
 
-我的个人博客仓库，基于 **Jekyll + Chirpy** 主题构建，便于长期写作与一键部署。
+我的个人博客仓库。
 
 ---
 
@@ -15,7 +15,7 @@
 | `_data/authors.yml` | 作者信息配置 |
 | `Gemfile` | 本地运行所需的依赖 |
 
-> 💡 **日常维护只需关注**：  
+> 💡 **日常维护**：  
 > - `_posts/` 新增/编辑文章  
 > - `_tabs/about.md` 更新个人介绍
 
@@ -35,8 +35,12 @@ YYYY-MM-DD-title.md
 
 ### 2. 添加 Front Matter（文件头信息）
 
-每篇文章开头必须包含 YAML 格式的 Front Matter，示例如下：
+每篇文章开头必须包含 YAML 格式的 Front Matter
+tags 是文章标签，可以有 0 个或多个。
+toc 用于控制是否开启文章侧栏目录。
+comments 用于控制是否开启文章评论区。
 
+示例如下：
 ```yaml
 ---
 layout: post
@@ -47,7 +51,3 @@ toc: true
 comments: false
 author: your_name
 ---
-
-tags 是文章标签，可以有 0 个或多个。
-toc 用于控制是否开启文章侧栏目录。
-comments 用于控制是否开启文章评论区。
