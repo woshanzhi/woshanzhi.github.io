@@ -1,6 +1,3 @@
-
-**文件名：`2026-07-14-journal-latex-template.md`**
-
 ---
 layout: post
 title: "Image and Vision Computing 期刊投稿｜Elsevier LaTeX 模板完整使用指南"
